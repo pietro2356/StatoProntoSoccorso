@@ -9,7 +9,11 @@
     "test": "ng test",
     "format:test": "prettier --list-different  \"./projects/**/src/**/*.{ts,html,css,scss,json}\"",
     "format:write": "prettier --write \"./projects/**/src/**/*.{ts,html,css,scss,json}\"",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "analyze": "ng build --stats-json --output-hashing none --named-chunks && esbuild-visualizer --template sunburst --metadata dist/stato-ps/stats.json --filename dist/stato-ps/analyze/index.html && http-server -o -c-1 ./dist/stato-ps/analyze/",
+    "analyze:sme": "ng build --stats-json --output-hashing none --named-chunks && source-map-explorer dist/stato-ps/browser/*.js --html dist/stato-ps/sme/index.html && http-server -o -c-1 ./dist/stato-ps/sme/"
+
+
   },
   "private": true,
   "dependencies": {
@@ -30,6 +34,8 @@
     "@angular/cli": "^17.2.3",
     "@angular/compiler-cli": "^17.2.0",
     "@types/jasmine": "~5.1.0",
+    "esbuild-visualizer": "^0.6.0",
+    "http-server": "^14.1.1",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -37,6 +43,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.2.5",
+    "source-map-explorer": "^2.5.3",
     "typescript": "~5.3.2"
   }
 }
