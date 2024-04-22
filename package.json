@@ -11,9 +11,14 @@
     "format:write": "prettier --write \"./projects/**/src/**/*.{ts,html,css,scss,json}\"",
     "lint": "ng lint",
     "analyze": "ng build --stats-json --output-hashing none --named-chunks && esbuild-visualizer --template sunburst --metadata dist/stato-ps/stats.json --filename dist/stato-ps/analyze/index.html && http-server -o -c-1 ./dist/stato-ps/analyze/",
-    "analyze:sme": "ng build --stats-json --output-hashing none --named-chunks && source-map-explorer dist/stato-ps/browser/*.js --html dist/stato-ps/sme/index.html && http-server -o -c-1 ./dist/stato-ps/sme/"
-
-
+    "analyze:sme": "ng build --stats-json --output-hashing none --named-chunks && source-map-explorer dist/stato-ps/browser/*.js --html dist/stato-ps/sme/index.html && http-server -o -c-1 ./dist/stato-ps/sme/",
+    "analyze:deps": "npm-run-all analyze:deps:*",
+    "analyze:deps:all": "madge projects/stato-ps/src/main.ts --ts-config tsconfig.json --image ./deps/stato-ps/_all.png",
+    "analyze:deps:ui": "madge --extensions ts --ts-config tsconfig.json --image ./deps/stato-ps/ui.png projects/stato-ps/src/app/ui/",
+    "analyze:deps:core": "madge --extensions ts --ts-config tsconfig.json --image ./deps/stato-ps/core.png projects/stato-ps/src/app/core/",
+    "analyze:deps:layout": "madge --extensions ts --ts-config tsconfig.json --image ./deps/stato-ps/layout.png projects/stato-ps/src/app/layout/",
+    "analyze:deps:pattern": "madge --extensions ts --ts-config tsconfig.json --image ./deps/stato-ps/pattern.png projects/stato-ps/src/app/pattern/",
+    "analyze:deps:feature": "madge --extensions ts --ts-config tsconfig.json --image ./deps/stato-ps/feature.png projects/stato-ps/src/app/feature/"
   },
   "private": true,
   "dependencies": {
@@ -42,8 +47,10 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "madge": "^7.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "source-map-explorer": "^2.5.3",
-    "typescript": "~5.3.2"
+    "typescript": "^5.1.6"
   }
 }
