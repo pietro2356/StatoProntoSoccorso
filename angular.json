@@ -93,7 +93,9 @@
               "projects/stato-ps/src/assets"
             ],
             "styles": [
-              "projects/stato-ps/src/styles.scss"
+              "projects/stato-ps/src/styles.scss",
+              "node_modules/primeng/resources/themes/bootstrap4-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           }
