@@ -97,8 +97,24 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/stato-ps/**/*.ts",
+              "projects/stato-ps/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@angular-eslint/schematics",
+      "@schematics/angular",
+      "@ngrx/schematics"
+    ]
   }
 }
