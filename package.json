@@ -10,7 +10,7 @@
     "format:test": "prettier --list-different  \"./projects/**/src/**/*.{ts,html,css,scss,json}\"",
     "format:write": "prettier --write \"./projects/**/src/**/*.{ts,html,css,scss,json}\"",
     "lint": "ng lint",
-    "analyze": "ng build --stats-json --output-hashing none --named-chunks && esbuild-visualizer --template sunburst --metadata dist/stato-ps/stats.json --filename dist/stato-ps/analyze/index.html && http-server -o -c-1 ./dist/stato-ps/analyze/",
+    "analyze": "ng build --stats-json --output-hashing none --named-chunks && esbuild-visualizer --template treemap --metadata dist/stato-ps/stats.json --filename dist/stato-ps/analyze/index.html && http-server -o -c-1 ./dist/stato-ps/analyze/",
     "analyze:sme": "ng build --stats-json --output-hashing none --named-chunks && source-map-explorer dist/stato-ps/browser/*.js --html dist/stato-ps/sme/index.html && http-server -o -c-1 ./dist/stato-ps/sme/",
     "analyze:deps": "npm-run-all analyze:deps:*",
     "analyze:deps:all": "madge projects/stato-ps/src/main.ts --ts-config tsconfig.json --image ./deps/stato-ps/_all.png",
