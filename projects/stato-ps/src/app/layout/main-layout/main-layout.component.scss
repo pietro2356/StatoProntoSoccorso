@@ -1,0 +1,185 @@
+:host {
+  display: block;
+}
+
+body {
+  color: black;
+  background-color: #f8f9fa;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  /* margin-top: 4rem; */
+  /* margin-left: 7.5rem; */
+  /* T - R - B - L */
+  margin: auto 2rem 1rem 7.5rem;
+}
+
+.navbar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: #33393f;
+}
+
+.header {
+  height: 4rem;
+  color: #707070;
+  margin-left: 5rem;
+
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  padding-top: 3rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .nav-item {
+    width: 100%;
+  } */
+
+.icon {
+  color: white;
+  font-size: 24px;
+}
+
+.logo {
+  border-bottom: solid 1px #5d6166;
+
+  height: 4rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  height: 2.5rem;
+}
+
+.image {
+  /* width: 90%; */
+  max-height: 100%;
+}
+
+/*###########################################*/
+/* .c-white{
+      color: #FFF;
+  }
+
+  .main-menu {
+    background: #33393F;
+    border-right: 1px solid #e5e5e5;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    width: 88px;
+  }
+
+
+  .main-menu > ul {
+    margin: 7px 0;
+  }
+
+  .main-menu li {
+    position: relative;
+    display: block;
+    width: 250px;
+  }
+
+  .main-menu li > a {
+    position: relative;
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #999;
+    font-family: arial;
+    font-size: 14px;
+    text-decoration: none;
+
+  }
+
+  .main-menu .nav-icon {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+
+  .main-menu .nav-text {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+    color: #fff;
+  } */
+
+/* All'interno del container component-card, vi sono i due container: side-bar che occupa 1/4 della larghezza occupabile e component area che occupa i restant 3/4*/
+.component-card {
+  display: flex;
+  width: 100%;
+}
+
+.side-bar {
+  flex: 1; /* Occupa 1/4 della larghezza disponibile */
+  background-color: #fff; /* Colore di sfondo a titolo di esempio */
+}
+
+.component-area {
+  flex: 3; /* Occupa 3/4 della larghezza disponibile */
+  background-color: #ffffff; /* Colore di sfondo a titolo di esempio */
+  margin-top: 70px;
+}
+
+.component_card_title {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.component_card_description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.ambient {
+  display: flex;
+  flex-direction: column;
+}
+
+.envrionment_label {
+  margin: 0px;
+}
+.version_lable {
+  font-size: 0.8rem;
+  margin: 0px;
+}
+
+.all_hover {
+  z-index: 100;
+}
+
+.message-box {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
