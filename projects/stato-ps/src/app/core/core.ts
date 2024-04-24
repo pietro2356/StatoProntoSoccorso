@@ -1,8 +1,9 @@
 import {
-  provideRouter,
   Routes,
+  provideRouter,
   withComponentInputBinding,
-  withEnabledBlockingInitialNavigation, withInMemoryScrolling,
+  withEnabledBlockingInitialNavigation,
+  withInMemoryScrolling,
   withRouterConfig,
 } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
