@@ -1,8 +1,7 @@
-import { Injectable, Signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpCoreService } from '../http/http-core.service';
-import { IReparto, IStatoProntoSoccorso, IStatoPSFromApi } from '../../models/IStatoProntoSoccorso';
-import { map, Observable } from 'rxjs';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Observable } from 'rxjs';
+import { IReparto, IStatoProntoSoccorsoModel, IStatoPSFromApi } from '@model/IStatoProntoSoccorso.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,24 +11,18 @@ export class ProntoSoccorsoService {
 
   constructor(private httpCore: HttpCoreService) { }
 
-  #getProntoSoccorsoDataFromApi(): Observable<IStatoPSFromApi> {
+  getProntoSoccorsoDataFromApi(): Observable<IStatoPSFromApi> {
     return this.httpCore.get<IStatoPSFromApi>(this.#apssUrl);
   }
 
-  #parseProntoSoccorsoData(data: IStatoPSFromApi): IReparto[] {
+  parseProntoSoccorsoData(data: IStatoPSFromApi): IReparto[] {
 
     const reparti: IReparto[] = [];
 
-    data.forEach((res: IStatoProntoSoccorso) => {
+    data.forEach((res: IStatoProntoSoccorsoModel) => {
       reparti.push(res.risposta.pronto_soccorso.reparto);
     });
 
     return reparti;
-  }
-
-  getProntoSoccorsoDataSignal(): Signal<IReparto[] | undefined>{
-    return toSignal(this.#getProntoSoccorsoDataFromApi().pipe(
-      map((data: IStatoPSFromApi) => this.#parseProntoSoccorsoData(data))
-    ));
   }
 }

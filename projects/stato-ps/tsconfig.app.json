@@ -17,12 +17,14 @@
       "@layout/*": [
         "./src/app/layout/*"
       ],
-
       "@ui/*": [
         "./src/app/ui/*"
       ],
       "@pattern/*": [
         "./src/app/pattern/*"
+      ],
+      "@model/*": [
+        "./src/app/model/*"
       ],
     }
   },
