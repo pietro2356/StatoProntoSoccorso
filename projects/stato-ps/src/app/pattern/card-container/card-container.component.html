@@ -1,8 +1,8 @@
 
-<ul>
+<div class="card-container-flex">
   @for(ps of psData(); track $index){
-    <li>{{ps.ospedale}} - {{ps.ambulatorio.verde}}</li>
+    <sps-card-stato-pronto-soccorso [statoPS]="ps" />
   } @empty {
     <p>nessun dato</p>
   }
-</ul>
+</div>

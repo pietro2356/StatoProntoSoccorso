@@ -1,0 +1,11 @@
+<div class="card flex justify-content-center">
+  <p-card header="{{statoPS.descrizione}}" subheader="{{statoPS.unita_operativa}}" [style]="{ width: '360px' }">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+      quas!
+    </p>
+    <ng-template pTemplate="footer">
+      <sps-attesa-colore [ambulatorio]="statoPS.ambulatorio" [attesa]="statoPS.attesa"/>
+    </ng-template>
+  </p-card>
+</div>

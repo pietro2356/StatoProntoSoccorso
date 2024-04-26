@@ -1,4 +1,11 @@
 :host {
   display: block;
+  padding-top: 30px
 }
 
+.card-container-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
