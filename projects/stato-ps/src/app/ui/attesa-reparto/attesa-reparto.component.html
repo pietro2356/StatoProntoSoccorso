@@ -1,0 +1,23 @@
+@if(statistichePS !== null){
+  <p-table [value]="statistichePSRenderizzabili">
+    <ng-template pTemplate="header">
+      <tr>
+        <th id="colore">Colore</th>
+        <th id="ambulatorio">Ambulatorio</th>
+        <th id="attesa">Attesa</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-stat>
+      <tr>
+        <td>
+          <!--{{ stat.codColore }}-->
+          <p-avatar label="{{stat.codColore.slice(0, 2).toUpperCase()}}" [style]="extractCssColor(stat.codColore)" styleClass="mr-2" shape="circle"></p-avatar>
+        </td>
+        <td>{{ stat.ambulatorio }}</td>
+        <td>{{ stat.attesa }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+} @else {
+  <p>Nessun dato disponibile</p>
+}

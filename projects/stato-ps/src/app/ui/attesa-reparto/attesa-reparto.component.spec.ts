@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AttesaColoreComponent } from './attesa-colore.component';
+import { AttesaRepartoComponent } from './attesa-reparto.component';
 
-describe('AttesaColoreComponent', () => {
-  let component: AttesaColoreComponent;
-  let fixture: ComponentFixture<AttesaColoreComponent>;
+describe('AttesaRepartoComponent', () => {
+  let component: AttesaRepartoComponent;
+  let fixture: ComponentFixture<AttesaRepartoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AttesaColoreComponent]
+      imports: [AttesaRepartoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AttesaColoreComponent);
+    fixture = TestBed.createComponent(AttesaRepartoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

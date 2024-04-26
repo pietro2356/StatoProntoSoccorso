@@ -29,48 +29,21 @@ export interface IReparto {
   "attesa-media": IAttesaMedia
 }
 
-/*export interface IAttesa {
-  bianco: string
-  verde: string
-  azzurro: string
-  arancio: string
-  giallo: string
-  rosso: string
-}*/
-
-/*export interface IAmbulatorio {
-  bianco: string
-  verde: string
-  azzurro: string
-  arancio: string
-  giallo: string
-  rosso: string
-}*/
-
-export interface IAmbulatorio {
-  [codColore: string]: string
-}
-export interface IAttesa {
-  [codColore: string]: string
-}
-export interface IOsservazione {
-  [codColore: string]: string
+export interface IColori {
+  bianco: string;
+  verde: string;
+  azzurro: string;
+  arancio: string;
+  rosso: string;
 }
 
-/*export interface IOsservazione {
-  [bianco: string]: string
-  verde: string
-  azzurro: string
-  arancio: string
-  giallo: string
-  rosso: string
-}*/
+export type IAmbulatorio = IColori;
+export type IAttesa = IColori;
+export type IOsservazione = IColori;
+export type IAttesaMedia = IColori;
 
-export interface IAttesaMedia {
-  bianco: string
-  verde: string
-  azzurro: string
-  arancio: string
-  giallo: string
-  rosso: string
+export interface IStatistichePS {
+  ambulatorio: IAmbulatorio;
+  attesa: IAttesa;
+  osservazione?: IOsservazione;
 }
