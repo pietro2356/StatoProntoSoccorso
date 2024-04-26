@@ -8,6 +8,7 @@ import {
 } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ENVIRONMENT_INITIALIZER } from '@angular/core';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export interface CoreOptions {
   routes: Routes;
@@ -16,6 +17,9 @@ export interface CoreOptions {
 export function provideCore({ routes }: CoreOptions) {
   return [
     provideAnimations(),
+    provideHttpClient(
+      withFetch()
+    ),
     provideRouter(
       routes,
       withRouterConfig({onSameUrlNavigation: 'reload'}),

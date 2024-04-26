@@ -11,6 +11,10 @@ export const routes: Routes = [
     loadChildren: () => import('./feature/home/home.routes')
   },
   {
+    path: 'stato-ps',
+    loadChildren: () => import('./feature/stato-ps/stato-ps.routes')
+  },
+  {
     path: '**',
     redirectTo: ''
   },

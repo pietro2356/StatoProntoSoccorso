@@ -1,0 +1,8 @@
+
+<ul>
+  @for(ps of psData(); track $index){
+    <li>{{ps.ospedale}} - {{ps.ambulatorio.verde}}</li>
+  } @empty {
+    <p>nessun dato</p>
+  }
+</ul>
