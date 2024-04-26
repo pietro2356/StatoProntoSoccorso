@@ -53,6 +53,12 @@
             "baseCapture": ["app"]
           },
           {
+            "type": "model",
+            "pattern": "model",
+            "basePattern": "projects/**/src/app",
+            "baseCapture": ["app"]
+          },
+          {
             "type": "pattern",
             "pattern": "pattern",
             "basePattern": "projects/**/src/app",
@@ -90,6 +96,7 @@
             "basePattern": "projects/**/src",
             "baseCapture": ["app"]
           }
+
         ],
         "boundaries/ignore": [
           "**/jest(.|-)*.ts"
@@ -128,12 +135,17 @@
                 "allow": [
                   ["lib-api"],
                   ["core",{"app": "${from.app}"}],
-                  ["env", {"app": "${from.app}"}]
+                  ["env", {"app": "${from.app}"}],
+                  ["model", {"app" : "${from.app}"}]
                 ]
               },
               {
                 "from": "ui",
-                "allow": [["lib-api"], ["ui",{"app": "${from.app}"}]]
+                "allow": [
+                  ["lib-api"],
+                  ["ui",{"app": "${from.app}"}],
+                  ["model", {"app" : "${from.app}"}]
+                ]
               },
               {
                 "from": "layout",
@@ -141,7 +153,8 @@
                   ["lib-api"],
                   ["core",{"app": "${from.app}"}],
                   ["ui",{"app": "${from.app}"}],
-                  ["pattern",{"app": "${from.app}"}]
+                  ["pattern",{"app": "${from.app}"}],
+                  ["model", {"app" : "${from.app}"}]
                 ]
               },
               {
@@ -151,7 +164,8 @@
                   ["app",{"app": "${from.app}"}],
                   ["core",{"app": "${from.app}"}],
                   ["layout",{"app": "${from.app}"}],
-                  ["feature-routes",{"app": "${from.app}"}]
+                  ["feature-routes",{"app": "${from.app}"}],
+                  ["model", {"app" : "${from.app}"}]
                 ]
               },
               {
@@ -160,7 +174,8 @@
                   ["lib-api"],
                   ["core",{"app": "${from.app}"}],
                   ["ui",{"app": "${from.app}"}],
-                  ["pattern",{"app": "${from.app}"}]
+                  ["pattern",{"app": "${from.app}"}],
+                  ["model", {"app" : "${from.app}"}]
                 ]
               },
               {
@@ -169,7 +184,8 @@
                   ["lib-api"],
                   ["core",{"app": "${from.app}"}],
                   ["ui",{"app": "${from.app}"}],
-                  ["pattern",{"app": "${from.app}"}]
+                  ["pattern",{"app": "${from.app}"}],
+                  ["model", {"app" : "${from.app}"}]
                 ]
               },
               {
@@ -179,16 +195,32 @@
                   ["core",{"app": "${from.app}"}],
                   ["pattern",{"app": "${from.app}"}],
                   ["feature",{"app": "${from.app}", "feature": "${from.feature}"}],
-                  ["feature-routes",{"app": "${from.app}", "feature": "!${from.feature}"}]
+                  ["feature-routes",{"app": "${from.app}", "feature": "!${from.feature}"}],
+                  ["model", {"app" : "${from.app}"}]
                 ]
               },
               {
                 "from": "lib-api",
-                "allow": [["lib", {"lib": "${from.lib}"}]]
+                "allow": [["lib", {"lib": "${from.lib}"}],["model", {"app" : "${from.app}"}]]
+
               },
               {
                 "from": "lib",
-                "allow": [["lib", {"lib": "${from.lib}"}]]
+                "allow": [["lib", {"lib": "${from.lib}"}],["model", {"app" : "${from.app}"}]]
+              },
+              {
+                "from": "models",
+                "allow": [
+                  ["lib-api"],
+                  ["core",{"app": "${from.app}"}],
+                  ["ui",{"app": "${from.app}"}],
+                  ["pattern",{"app": "${from.app}"}],
+                  ["model",{"app": "${from.app}"}],
+                  ["feature",{"app": "${from.app}"}],
+                  ["feature-routes",{"app": "${from.app}"}],
+                  ["layout",{"app": "${from.app}"}]
+                ]
+
               }
             ]
           }
