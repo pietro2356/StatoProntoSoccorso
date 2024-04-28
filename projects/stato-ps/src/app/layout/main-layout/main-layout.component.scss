@@ -16,9 +16,21 @@ body {
   margin: auto 2rem 1rem 7.5rem;
 }
 
+// when a screen became too smoll, the side bar will be hidden
+@media (max-width: 768px) {
+  .main {
+    margin-left: auto;
+  }
+
+  // hide navbar
+  .navbar {
+    display: none;
+  }
+}
+
 .navbar {
   width: 5rem;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   background-color: #33393f;
 }
@@ -40,8 +52,7 @@ body {
 
 .navbar-nav {
   list-style: none;
-  padding: 0;
-  padding-top: 3rem;
+  padding: 3rem 0 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -167,11 +178,11 @@ body {
 }
 
 .envrionment_label {
-  margin: 0px;
+  margin: 0;
 }
 .version_lable {
   font-size: 0.8rem;
-  margin: 0px;
+  margin: 0;
 }
 
 .all_hover {
