@@ -103,7 +103,8 @@
         ]
 
       },
-      "rules": {
+      "rules":{
+        "no-console": "warn",
         "@angular-eslint/directive-selector": [
           "error",
           {

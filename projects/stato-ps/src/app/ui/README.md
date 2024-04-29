@@ -1,4 +1,4 @@
-# Cartella UI
+# Ui
 
 In questa cartella vengono inseriti tutti i componenti che compongono l'interfaccia grafica dell'applicazione.
 Come ad esempio: 

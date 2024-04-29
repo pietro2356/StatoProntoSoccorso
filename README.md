@@ -1,27 +1,50 @@
-# StatoProntoSoccorso
+# Stato Pronto Soccorso
+Applicazione che permette la consultazione delle attese dei pronto soccorso della provincia di Trento.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+## Scopo del progetto
+Allenarmi nella realizzazione di applicativi con le nuove versioni di Angular, cercando sempre di migliorare il livello del progetto e le mie abilità.
 
-## Development server
+## Avvio del progetto
+Per usare il programma dovrete per prima cosa installare i `node modules` col comando:
+```
+npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Dopo di che potrete lanciarlo col comando:
+```
+npm start
+```
 
-## Code scaffolding
+Per poi recarvi sulla pagina al link: [http://localhost:4200/](http://localhost:4200/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Errore CORS
+Le risorse e le API usate purtroppo sono soggette a CORS, per ovviare a questo problema vi sono delle estensioni per i browser che permettono di far funzionare il progetto.
+* Chrome - `Allow CORS: Access-Control-Allow-Origin`
+* Firefox - `CORS Everywhere`
 
-## Build
+In alternativa alle estensioni potete lanciare una tab di Google Chrome senza i controlli CORS aprendo il pannello **Esegui** con `WIN + R`.
+Una volta aperto inserite questo comando e date INVIO:
+```
+chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security
+```
+Da questa scheda di Chrome navigate fino all'URL di prima e potrete usare l'applicativo senza dover installare nessuna estensione.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Novità del progetto
+La realizzazione di questo progetto ha comportato delle migliorie rispetto al suo predecessore.
+Sono state riviste varie cose tra cui:
+* Struttura del progetto
+* Utilizzo di nuovi strumenti per l'analisi del codice: ESLint e Prettier
+* Logiche di programmazione nuove
+* Nuove funzionalità fornite da Angular v17
 
-## Running unit tests
+### Strutura del progetto
+La struttura del progetto è stata rivista per poter testare un nuovo approccio basato sull'ottimizzazione del codice e sulla sua manutenibilità.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La struttura si compone in queste parti:
+* **Core**: [README.md](./projects/stato-ps/src/app/core/README.md)
+* **Feature**: [README.md](./projects/stato-ps/src/app/feature/README.md)
+* **Layout**: [README.md](./projects/stato-ps/src/app/layout/README.md)
+* **Pattern**: [README.md](./projects/stato-ps/src/app/pattern/README.md)
+* **Ui**: [README.md](./projects/stato-ps/src/app/ui/README.md)
+* **Model**: [README.md](./projects/stato-ps/src/app/model/README.md)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
